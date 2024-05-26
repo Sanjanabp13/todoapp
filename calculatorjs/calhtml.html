@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylecal.css">
+</head>
+<body>
+<div id="calculator">
+    <input id="display" readonly>
+    <div id="keys">
+        <button onclick="appendtodis('+')" id="yellow">+</button>
+        <button onclick="appendtodis('7')">7</button>
+        <button onclick="appendtodis('8')">8</button>
+        <button onclick="appendtodis('9')">9</button>
+        <button onclick="appendtodis('-')"id="yellow">-</button>
+        <button onclick="appendtodis('4')">4</button>
+        <button onclick="appendtodis('5')">5</button>
+        <button onclick="appendtodis('6')">6</button>
+        <button onclick="appendtodis('*')"id="yellow">*</button>
+        <button onclick="appendtodis('1')">1</button>
+        <button onclick="appendtodis('2')">2</button>
+        <button onclick="appendtodis('3')">3</button>
+        <button onclick="appendtodis('/')"id="yellow">/</button>
+        
+        <button onclick="appendtodis('.')" id="yellow">.</button>
+        <button onclick="cleardisplay()"id="yellow">C</button>
+        <button onclick="appendtodis('0')">0</button>
+        <button onclick="calculate()"id="yellow">=</button>
+        
+    </div>
+
+
+</div>
+
+    <script src="scriptcal.js"></script>
+</body>
+</html>

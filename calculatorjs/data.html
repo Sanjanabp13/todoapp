@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Retrieval App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Data Retrieval App</h2>
+  <label for="inputData">Enter Data:</label>
+  <input type="text" id="inputData" placeholder="Enter data...">
+  <button onclick="retrieveData()">Retrieve Data</button>
+  <div id="result"></div>
+
+  <script>
+    function retrieveData() {
+      var inputData = document.getElementById('inputData').value;
+
+      // AJAX request
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'backend-endpoint?inputData=' + encodeURIComponent(inputData), true);
+
+      xhr.onload = function() {
+        if (xhr.status == 200) {
+          document.getElementById('result').innerHTML = xhr.responseText;
+        } else {
+          console.error('Error:', xhr.statusText);
+        }
+      };
+
+      xhr.onerror = function() {
+        console.error('Network error');
+      };
+
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
+
